@@ -1,0 +1,15 @@
+---
+plugin: aws_ec2
+
+aws_profile: default
+
+regions:
+  - eu-north-1
+
+keyed_groups:
+  - key: tags.Name
+    prefix: tag_
+strict: False
+
+hostnames:
+  - ip-address
