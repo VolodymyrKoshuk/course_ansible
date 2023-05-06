@@ -9,6 +9,9 @@ regions:
 keyed_groups:
   - key: tags.Name
     prefix: tag_
+
+  - key: instance_type
+    prefix: instance_type
 strict: False
 
 hostnames:
