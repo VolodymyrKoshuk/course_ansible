@@ -1,8 +1,7 @@
 ---
 # handlers file for clamav
----
 - name: Restart ClamAV
   service:
-    name: clamd
+    name: clamav-freshclam.service
     state: restarted
     enabled: true

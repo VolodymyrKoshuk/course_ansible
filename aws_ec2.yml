@@ -10,9 +10,12 @@ keyed_groups:
   - key: tags.Name
     prefix: tag_
 
+  - key: tags.Role
+    prefix: role_
+
   - key: instance_type
     prefix: instance_type
 strict: False
 
 hostnames:
-  - ip-address
+  - private-ip-address

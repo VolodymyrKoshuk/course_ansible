@@ -1,5 +1,4 @@
 ---
-
 - name: Installing ClamAV 
   hosts: all
   become: true
