@@ -1,2 +1,13 @@
 ---
-# tasks file for clamav
+- name: Install ClamAV
+  yum:
+    name: clamav
+    state: present
+    update_cache: true
+  become: true
+
+- name: Update DB ClamAV
+  command: freshclam
+  notify: Restart ClamAV
+  become: true
+
