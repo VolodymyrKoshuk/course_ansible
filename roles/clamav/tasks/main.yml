@@ -1,13 +1,27 @@
 ---
-- name: Install ClamAV
-  yum:
-    name: clamav
-    state: present
-    update_cache: true
-  become: true
+- block: #============Red Hat=============
+   - name: Install ClamAV to RedHat
+     yum:
+       name: clamav
+       state: present
+       update_cache: true
+     become: true
 
-- name: Update DB ClamAV
-  command: freshclam
-  notify: Restart ClamAV
-  become: true
+   - name: Update DB ClamAV
+     command: freshclam
+     notify: Restart ClamAV to RedHat
+     become: true
+  when: ansible_os_family == "RedHat"
+
+- block: #=============Debian=============
+   - name: Install ClamAV to Debian
+     apt:
+       name: clamav
+       state: present
+       update_cache: true
+     notify: Restart ClamAV to Debian
+     become: true
+     
+  when: ansible_os_family == "Debian"
+
 
