@@ -1,0 +1,13 @@
+---
+# handlers file for clamav
+- name: Restart ClamAV to RedHat
+  service:
+    name: clamav-freshclam.service
+    state: restarted
+    enabled: true
+
+- name: Restart ClamAV to Debian
+  service:
+    name: clamav-freshclam 
+    state: restarted
+    enabled: true
