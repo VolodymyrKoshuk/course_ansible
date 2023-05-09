@@ -1,8 +1,6 @@
 ---
 plugin: aws_ec2
 
-aws_profile: default
-
 regions:
   - eu-north-1
 
@@ -18,4 +16,4 @@ keyed_groups:
 strict: False
 
 hostnames:
-  - ip-address
+  - private-ip-address
