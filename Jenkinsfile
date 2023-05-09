@@ -7,6 +7,7 @@ pipeline {
          stage('Running ansible role') {
             steps {
 		sh 'ansible-playbook install_clamav.yaml'
-         }
-    } 
+            }
+        }  
+    }    
 }
